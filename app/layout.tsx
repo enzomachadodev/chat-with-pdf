@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
 import { cn } from "@/utils/cn";
+import "./globals.css";
 
 const font = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
