@@ -23,28 +23,22 @@ export const FileUploader = () => {
 		}
 	}, [fileId, router]);
 
-	const onDrop = useCallback(async (acceptedFiles: File[]) => {
-		const file = acceptedFiles[0];
-		if (file) {
-			if (true) {
+	const onDrop = useCallback(
+		async (acceptedFiles: File[]) => {
+			const file = acceptedFiles[0];
+			if (file) {
 				await handleUpload(file);
 			} else {
 				toast({
 					variant: "destructive",
-					title: "Free Plan File Limit Reached",
+					title: "Error Uploading File",
 					description:
-						"You have reached the maximum number of files allowed for your account. Please upgrade to add more documents.",
+						"There was an error uploading your file. Please try again. If the problem persists, contact support.",
 				});
 			}
-		} else {
-			toast({
-				variant: "destructive",
-				title: "Error Uploading File",
-				description:
-					"There was an error uploading your file. Please try again. If the problem persists, contact support.",
-			});
-		}
-	}, []);
+		},
+		[handleUpload]
+	);
 
 	const statusIcons: {
 		[key in StatusText]: JSX.Element;
