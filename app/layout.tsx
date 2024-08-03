@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/utils/cn";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const font = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -26,6 +27,7 @@ const RootLayout = ({
 					)}
 				>
 					{children}
+					<Toaster />
 				</body>
 			</html>
 		</ClerkProvider>
