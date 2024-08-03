@@ -1,7 +1,4 @@
-import { PageProps } from "@/.next/types/app/page";
-import { NextPage } from "next";
-
-interface ChatWithFileProps extends PageProps {
+interface ChatWithFileProps {
 	params: { id: string };
 }
 

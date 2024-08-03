@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { doc, setDoc } from "firebase/firestore";
+import { generateEmbeddings } from "@/actions/generateEmbeddings";
 
 export enum StatusText {
 	UPLOADING = "Uploading file...",
@@ -65,7 +66,7 @@ export const useUpload = () => {
 				});
 
 				setStatus(StatusText.GENERATING);
-				//await generateEmbeddings(fileIdToUploadTo);
+				await generateEmbeddings(fileIdToUploadTo);
 
 				setFileId(fileIdToUploadTo);
 			}

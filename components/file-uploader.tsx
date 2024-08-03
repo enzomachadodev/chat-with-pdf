@@ -11,11 +11,12 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useDropzone } from "react-dropzone";
-import { toast } from "./ui/use-toast";
+import { useToast } from "./ui/use-toast";
 
 export const FileUploader = () => {
-	const { progress, status, fileId, handleUpload } = useUpload();
 	const router = useRouter();
+	const { progress, status, fileId, handleUpload } = useUpload();
+	const { toast } = useToast();
 
 	useEffect(() => {
 		if (fileId) {
@@ -37,7 +38,7 @@ export const FileUploader = () => {
 				});
 			}
 		},
-		[handleUpload]
+		[handleUpload, toast]
 	);
 
 	const statusIcons: {
@@ -68,7 +69,6 @@ export const FileUploader = () => {
 
 	return (
 		<div className="flex flex-col gap-4 items-center max-w-7xl mx-auto">
-			{/* Loading... tomorrow! */}
 			{uploadInProgress && (
 				<div className="mt-32 flex flex-col justify-center items-center gap-5">
 					<div
