@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/utils/cn";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const font = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const font = Montserrat({
+	subsets: ["latin"],
+	variable: "--font-sans",
+	weight: ["100", "300", "400", "500", "700", "900"],
+});
 
 export const metadata: Metadata = {
 	title: "Chat With PDF",
@@ -22,7 +26,7 @@ const RootLayout = ({
 			<html lang="en">
 				<body
 					className={cn(
-						"w-full min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-sans antialiased",
+						"w-full min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-medium font-sans antialiased",
 						font.variable
 					)}
 				>
