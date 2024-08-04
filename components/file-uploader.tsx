@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect } from "react";
-import { StatusText, useUpload } from "@/hooks/useUpload";
+import { StatusText, useUpload } from "@/hooks/use-upload";
 import {
 	CheckCircleIcon,
 	CircleArrowDown,
