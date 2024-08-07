@@ -11,7 +11,6 @@ const DashboardLayout = ({
 		<ClerkLoaded>
 			<div className="flex-1 flex flex-col h-screen">
 				<Header />
-
 				{children}
 			</div>
 		</ClerkLoaded>

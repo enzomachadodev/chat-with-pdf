@@ -6,12 +6,12 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export const Header = () => {
 	return (
-		<header className="w-full flex justify-between items-center bg-white shadow-sm p-5 border-b">
+		<header className="w-full flex justify-between items-center bg-stone-950 shadow-sm p-5 border-b border-stone-700">
 			<Link
 				href="/dashboard"
 				className="text-2xl font-bold"
 			>
-				Chat to <span className="text-indigo-600">PDF</span>
+				Chat to <span className="text-rose-500">PDF</span>
 			</Link>
 
 			<SignedIn>

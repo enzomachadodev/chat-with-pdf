@@ -4,6 +4,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/utils/cn";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
+import { dark } from "@clerk/themes";
 
 const font = Montserrat({
 	subsets: ["latin"],
@@ -22,15 +24,22 @@ const RootLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<ClerkProvider>
+		<ClerkProvider appearance={{ baseTheme: dark }}>
 			<html lang="en">
 				<body
 					className={cn(
-						"w-full min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 font-medium font-sans antialiased",
+						"w-full min-h-screen overflow-x-hidden bg-stone-950 text-stone-50 font-medium font-sans antialiased",
 						font.variable
 					)}
 				>
-					{children}
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
+					</ThemeProvider>
 					<Toaster />
 				</body>
 			</html>

@@ -19,7 +19,7 @@ export const Documents = async () => {
 		.get();
 
 	return (
-		<div className="flex flex-wrap p-5 bg-gray-100 justify-center lg:justify-start rounded-sm gap-5 max-w-7xl mx-auto">
+		<div className="p-5 rounded-sm gap-5 max-w-6xl flex flex-wrap items-center justify-between md:grid-cols-2 lg:grid-cols-4 mx-auto">
 			{documentsSnapshot.docs.map((doc) => {
 				const { name, downloadUrl, size } = doc.data();
 

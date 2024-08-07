@@ -121,14 +121,14 @@ export const Chat = ({ id }: ChatProps) => {
 	};
 
 	return (
-		<div className="flex flex-col h-full overflow-scroll">
+		<div className="flex flex-col h-full overflow-y-auto">
 			{/* Chat contents */}
 			<div className="flex-1 w-full">
 				{/* chat messages... */}
 
 				{loading ? (
 					<div className="flex items-center justify-center">
-						<Loader2Icon className="animate-spin h-20 w-20 text-indigo-600 mt-20" />
+						<Loader2Icon className="animate-spin h-20 w-20 text-rose-500 mt-20" />
 					</div>
 				) : (
 					<div className="p-5">
@@ -157,20 +157,22 @@ export const Chat = ({ id }: ChatProps) => {
 
 			<form
 				onSubmit={handleSubmit}
-				className="flex sticky bottom-0 space-x-2 p-5 bg-indigo-600/75"
+				className="flex sticky bottom-0 space-x-2 p-5 bg-stone-700/75"
 			>
 				<Input
 					placeholder="Ask a Question..."
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
+					className="outline-none ring-0"
 				/>
 
 				<Button
 					type="submit"
 					disabled={!input || isPending}
+					className="dark:bg-rose-600 dark:hover:bg-rose-800 dark:text-stone-50"
 				>
 					{isPending ? (
-						<Loader2Icon className="animate-spin text-indigo-600" />
+						<Loader2Icon className="animate-spin text-rose-600" />
 					) : (
 						"Ask"
 					)}

@@ -38,7 +38,7 @@ export const PdfView = ({ url }: PdfViewProps) => {
 
 	return (
 		<div className="flex flex-col justify-center items-center">
-			<div className="sticky top-0 z-50 bg-gray-100 p-2 rounded-b-lg">
+			<div className="sticky top-0 z-50 bg-stone-700 p-2 rounded-b-lg">
 				<div className="max-w-6xl px-2 grid grid-cols-6 gap-2">
 					<Button
 						variant="outline"
@@ -98,7 +98,7 @@ export const PdfView = ({ url }: PdfViewProps) => {
 			</div>
 
 			{!file ? (
-				<Loader2Icon className="animate-spin h-20 w-20 text-indigo-600 mt-20" />
+				<Loader2Icon className="animate-spin h-20 w-20 text-rose-600 mt-20" />
 			) : (
 				<Document
 					loading={null}

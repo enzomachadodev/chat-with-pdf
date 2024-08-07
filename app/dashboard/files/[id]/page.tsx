@@ -26,7 +26,7 @@ const ChatWithFile = async ({ params: { id } }: ChatWithFileProps) => {
 				<Chat id={id} />
 			</div>
 
-			<div className="col-span-5 lg:col-span-3 bg-gray-100 border-r-2 lg:border-indigo-600 lg:-order-1 overflow-auto">
+			<div className="col-span-5 lg:col-span-3 bg-stone-900 border-r-2 lg:border-rose-500 lg:-order-1 overflow-auto">
 				<PdfView url={url} />
 			</div>
 		</div>
