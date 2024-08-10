@@ -45,7 +45,7 @@ export default function Home() {
 				<div className="pt-16 mx-auto max-w-7xl px-6 lg:px-8">
 					<Image
 						alt="App screenshot"
-						src="https://i.imgur.com/VciRSTI.jpeg"
+						src="/screenshot.webp"
 						width={2432}
 						height={1442}
 						className="rounded-xl shadow-2xl ring-1 ring-stone-50/10"
