@@ -98,8 +98,6 @@ export const Chat = ({ id }: ChatProps) => {
 		startTransition(async () => {
 			const { success, message } = await askQuestion(id, q);
 
-			console.log("DEBUG", success, message);
-
 			if (!success) {
 				toast({
 					variant: "destructive",
@@ -122,10 +120,7 @@ export const Chat = ({ id }: ChatProps) => {
 
 	return (
 		<div className="flex flex-col h-full overflow-y-auto">
-			{/* Chat contents */}
 			<div className="flex-1 w-full">
-				{/* chat messages... */}
-
 				{loading ? (
 					<div className="flex items-center justify-center">
 						<Loader2Icon className="animate-spin h-20 w-20 text-rose-500 mt-20" />

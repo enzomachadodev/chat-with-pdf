@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { FilePlus2 } from "lucide-react";
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import { UpgradeButton } from "./upgrade-button";
 
 export const Header = () => {
 	return (
@@ -40,6 +41,7 @@ export const Header = () => {
 						</Link>
 					</Button>
 
+					<UpgradeButton />
 					<UserButton />
 				</div>
 			</SignedIn>

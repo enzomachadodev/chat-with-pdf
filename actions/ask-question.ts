@@ -4,9 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { Message } from "@/components/chat";
 import { adminDb } from "@/firebase-admin";
 import { generateLangchainCompletion } from "@/lib/langchain";
-
-const PRO_LIMIT = 20;
-const FREE_LIMIT = 2;
+import { FREE_LIMIT, PRO_LIMIT } from "@/hooks/use-subscription";
 
 export const askQuestion = async (id: string, question: string) => {
 	auth().protect();
