@@ -29,7 +29,7 @@ export const useUpload = () => {
 
 		// TODO: FREE/PRO limitations...
 
-		const fileIdToUploadTo = uuidv4(); // example: 123e4567-e89b-12d3-a456-426614174000
+		const fileIdToUploadTo = uuidv4();
 
 		const storageRef = ref(
 			storage,

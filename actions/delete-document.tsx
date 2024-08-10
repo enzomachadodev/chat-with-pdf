@@ -11,7 +11,6 @@ export const deleteDocument = async (docId: string) => {
 
 	const { userId } = await auth();
 
-	// Delete the document from the database
 	await adminDb
 		.collection("users")
 		.doc(userId!)
@@ -20,7 +19,7 @@ export const deleteDocument = async (docId: string) => {
 		.delete();
 
 	await adminStorage
-		.bucket(process.env.FIREBASE_STORAGE_BUCKET) // update with env variable
+		.bucket(process.env.FIREBASE_STORAGE_BUCKET)
 		.file(`users/${userId}/files/${docId}`)
 		.delete();
 

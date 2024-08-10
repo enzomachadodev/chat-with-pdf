@@ -41,12 +41,6 @@ function useSubscription() {
 		const files = filesSnapshot.docs;
 		const usersLimit = hasActiveMembership ? PRO_LIMIT : FREE_LIMIT;
 
-		console.log(
-			"Checking if user is over file limit",
-			files.length,
-			usersLimit
-		);
-
 		setIsOverFileLimit(files.length >= usersLimit);
 	}, [filesSnapshot, hasActiveMembership]);
 

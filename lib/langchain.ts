@@ -7,7 +7,6 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { HumanMessage, AIMessage } from "@langchain/core/messages";
 import { PineconeStore } from "@langchain/pinecone";
-import { PineconeConflictError } from "@pinecone-database/pinecone/dist/errors";
 import { Index, RecordMetadata } from "@pinecone-database/pinecone";
 import { auth } from "@clerk/nextjs/server";
 import { adminDb } from "../firebase-admin";
@@ -229,3 +228,4 @@ const generateLangchainCompletion = async (docId: string, question: string) => {
 
 // Export the model and the run function
 export { model, generateLangchainCompletion };
+
