@@ -19,20 +19,14 @@ export const askQuestion = async (id: string, question: string) => {
 		.doc(id)
 		.collection("chat");
 
-	// check how many user messages are in the chat
 	const chatSnapshot = await chatRef.get();
 	const userMessages = chatSnapshot.docs.filter(
 		(doc) => doc.data().role === "human"
 	);
 
-	//   Check membership limits for messages in a document
 	const userRef = await adminDb.collection("users").doc(userId!).get();
 
-	console.log("DEBUG 2", userRef.data());
-
-	//   check if user is on FREE plan and has asked more than the FREE number of questions
 	if (!userRef.data()?.hasActiveMembership) {
-		console.log("Debug 3", userMessages.length, FREE_LIMIT);
 		if (userMessages.length >= FREE_LIMIT) {
 			return {
 				success: false,
@@ -41,9 +35,7 @@ export const askQuestion = async (id: string, question: string) => {
 		}
 	}
 
-	// check if user is on PRO plan and has asked more than 100 questions
 	if (userRef.data()?.hasActiveMembership) {
-		console.log("Debug 4", userMessages.length, PRO_LIMIT);
 		if (userMessages.length >= PRO_LIMIT) {
 			return {
 				success: false,
@@ -60,7 +52,6 @@ export const askQuestion = async (id: string, question: string) => {
 
 	await chatRef.add(userMessage);
 
-	//   Generate AI Response
 	const reply = await generateLangchainCompletion(id, question);
 
 	const aiMessage: Message = {

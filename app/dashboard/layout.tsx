@@ -9,7 +9,7 @@ const DashboardLayout = ({
 }>) => {
 	return (
 		<ClerkLoaded>
-			<div className="flex-1 flex flex-col h-screen">
+			<div className="flex-1 flex flex-col">
 				<Header />
 				{children}
 			</div>
