@@ -21,7 +21,7 @@ const ChatWithFile = async ({ params: { id } }: ChatWithFileProps) => {
 	const url = ref.data()?.downloadUrl;
 
 	return (
-		<div className="grid lg:grid-cols-5 h-full overflow-hidden">
+		<div className="grid lg:grid-cols-5 h-[calc(100vh_-_81px)] overflow-hidden ">
 			<div className="col-span-5 lg:col-span-2 overflow-y-auto">
 				<Chat id={id} />
 			</div>
